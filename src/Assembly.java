@@ -36,7 +36,6 @@ public class Assembly implements Part {
      */
     @Override
     public double getCost() {
-        //Sum the cost of the subparts from the collection stream by using the method reference to getCost()
         double initialCost = this.subParts.stream().mapToDouble(Part::getCost).sum();
         return initialCost + (USD_PER_SUB_PART * this.subParts.size());
     }
@@ -59,18 +58,18 @@ public class Assembly implements Part {
         System.out.println("==========================");
         System.out.println(this.getName());
         System.out.println("==========================");
-        //First print out the information for each subpart
+
         for(Part part : subParts) {
             System.out.println(String.format("Part: %s", part.getName()));
             System.out.println(String.format("Cost: $%s", costFormat.format(part.getCost())));
             System.out.println(String.format("Weight: %s lbs", weightFormat.format(part.getWeight())));
             System.out.println();
         }
-        //Print out the total information for the cost and the weight
+
         System.out.println(String.format("Total Cost: $%s", costFormat.format(this.getCost())));
         System.out.println(String.format("Total Weight: %s lbs", weightFormat.format(this.getWeight())));
         System.out.println();
-        //Then print out the bill of materials for the subparts
+
         for(Part part : subParts) {
             part.printBillOfMaterials();
 

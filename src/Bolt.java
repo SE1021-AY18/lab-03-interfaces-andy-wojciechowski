@@ -58,6 +58,7 @@ public class Bolt implements Part {
         DecimalFormat inchesFormat = new DecimalFormat("0.0###");
         DecimalFormat weightFormat = new DecimalFormat("0.###");
         DecimalFormat costFormat = new DecimalFormat("0.00");
+
         System.out.println("==========================");
         System.out.println(this.getName());
         System.out.println("==========================");

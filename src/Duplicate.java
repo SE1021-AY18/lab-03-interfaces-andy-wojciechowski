@@ -40,8 +40,7 @@ public class Duplicate implements Part {
     @Override
     public double getCost() {
         double initialCost = numDuplicates * identicalPart.getCost();
-        //If the number of duplicates is between 5 and 10 reduce the cost by the first factor
-        //Otherwise if the number of duplicates is greater than 10 reduce the cost by the second factor
+
         if(numDuplicates >= USD_THRESHOLD1 && numDuplicates < USD_THRESHOLD2) {
             return REDUCTION_FACTOR1 * initialCost;
         } else if(numDuplicates >= USD_THRESHOLD2) {
